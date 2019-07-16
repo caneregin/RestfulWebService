@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 public class UserResource {
 	UserRepository repo = new UserRepository();
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public List<User> getUsers() {
 		System.out.print("usere girdin");
 		return repo.getUsers();
@@ -22,7 +22,7 @@ public class UserResource {
 	}
 	@GET
 	@Path("user/{id}")
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public User getUser(@PathParam("id") int id)
 	{
 		System.out.print("usere girdinafasf9");
